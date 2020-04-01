@@ -7,8 +7,9 @@
  <tr>
   <td><%= tweet.content %></td>
   <td><%= link_to '詳細を確認する', tweet_path(tweet.id) %></td>
-  <td><%= link_to "投稿を編集する", edit_tweet_path(tweet.id) %></td>
- </tr>
+  <td><%= link_to "投稿を編集する", edit_tweet_path(tweet.id), data: { confirm: '本当に編集して良いですか?'} %></td>
+  <td><%= link_to '投稿を削除する', tweet_path(tweet.id), method: :delete, data: { confirm: '本当に削除して良いですか?'} %></td>
+  </tr>
 <% end %>
 </table>
 <br>
